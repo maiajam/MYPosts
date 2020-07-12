@@ -1,12 +1,13 @@
 package com.maiajam.maiposts.data.retrofit;
 
-import retrofit2.Call;
+import com.maiajam.maiposts.data.model.AllPost;
+import java.util.List;
+import io.reactivex.Observable;
 import retrofit2.http.GET;
 
 public interface ApiService {
 
     @GET("Posts")
-    Call<> getAllPosts();
-
+    Observable<List<AllPost>> getAllPosts();
 
 }
