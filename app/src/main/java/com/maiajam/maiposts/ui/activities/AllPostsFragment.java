@@ -15,15 +15,13 @@ import android.view.ViewGroup;
 import com.maiajam.maiposts.R;
 import com.maiajam.maiposts.databinding.ActivityAllPostsBinding;
 
-public class AllPostsActivity extends Fragment {
+public class AllPostsFragment extends Fragment {
 
     ActivityAllPostsBinding allPostsBinding ;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        allPostsBinding = DataBindingUtil.setContentView(this,R.layout.activity_all_posts);
-
-
+        allPostsBinding = DataBindingUtil.setContentView(getActivity(),R.layout.activity_all_posts);
 
     }
 
@@ -36,6 +34,7 @@ public class AllPostsActivity extends Fragment {
     }
 
     private void initialAllPost() {
-        allPostsBinding.AllPostsRVAllPosts.setLayoutManager(new LinearLayoutManager(this));
+        allPostsBinding.AllPostsRVAllPosts.setLayoutManager(new LinearLayoutManager(getActivity()));
+
     }
 }
