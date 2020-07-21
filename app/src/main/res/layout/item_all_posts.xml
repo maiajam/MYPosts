@@ -6,6 +6,9 @@
 
     <data>
 
+        <variable
+            name="AllPost"
+            type="com.maiajam.maiposts.data.model.AllPost" />
     </data>
 
     <RelativeLayout
@@ -14,22 +17,24 @@
         tools:context=".ui.activities.AllPostsActivity">
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/ItemAllPost_CardView_ViewPost"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/ItemAllPost_CardView_ViewPost">
+            android:layout_height="wrap_content">
 
             <TextView
+                android:id="@+id/ItemAllPost_TextView_PostTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/TitleTextSize"
-                android:id="@+id/ItemAllPost_TextView_PostTitle" />
+                android:text="@{AllPost.title}"
+                android:textSize="@dimen/TitleTextSize" />
 
 
             <TextView
+                android:id="@+id/ItemAllPost_TextView_PostContent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/ContentTextSize"
-                android:id="@+id/ItemAllPost_TextView_PostContent" />
+                android:text="@{AllPost.body}"
+                android:textSize="@dimen/ContentTextSize" />
 
         </androidx.cardview.widget.CardView>
 

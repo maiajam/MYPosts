@@ -5,7 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.maiajam.maiposts.MainActivity;
 import com.maiajam.maiposts.R;
+
+import static java.lang.Thread.sleep;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -13,17 +16,28 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-
-        startAfter5Sec();
+        startAfter2Sec();
     }
 
-    private void startAfter5Sec() {
+    private void startAfter2Sec() {
 
-        viewAllPostsActivity();
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    sleep(2*1000);
+                    goAllPostActivity();
+                    finish();
+
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+       thread.start();
     }
 
-    private void viewAllPostsActivity() {
-
-        startActivity(new Intent(SplashActivity.this,AllPostsActivity.class));
+    private void goAllPostActivity() {
+        startActivity(new Intent(SplashActivity.this, MainActivity.class));
     }
 }

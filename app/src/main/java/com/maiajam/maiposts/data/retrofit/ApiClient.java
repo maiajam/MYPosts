@@ -10,7 +10,7 @@ public class ApiClient {
     public static Retrofit retrofit = null ;
 
 
-    public Retrofit ApiClient() {
+    public static Retrofit getApiClient() {
         if(retrofit == null)
         retrofit =  new Retrofit.Builder()
                         .baseUrl(baseUrl)
@@ -21,4 +21,9 @@ public class ApiClient {
         return retrofit ;
     }
 
+    private static ApiService createApiService()
+    {
+        ApiService service = retrofit.create(ApiService.class);
+         return service;
+    }
 }
