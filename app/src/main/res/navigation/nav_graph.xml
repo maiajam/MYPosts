@@ -5,6 +5,6 @@
 
     <fragment
         android:id="@+id/allPostsFragment"
-        android:name="com.maiajam.maiposts.ui.activities.AllPostsFragment"
+        android:name="com.maiajam.maiposts.ui.fragments.AllPostsFragment"
         android:label="AllPostsFragment" />
 </navigation>

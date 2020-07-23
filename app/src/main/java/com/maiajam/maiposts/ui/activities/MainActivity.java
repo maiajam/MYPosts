@@ -1,7 +1,9 @@
-package com.maiajam.maiposts;
+package com.maiajam.maiposts.ui.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.maiajam.maiposts.R;
 
 public class MainActivity extends AppCompatActivity {
 

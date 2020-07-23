@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.maiajam.maiposts.MainActivity;
 import com.maiajam.maiposts.R;
 
 import static java.lang.Thread.sleep;

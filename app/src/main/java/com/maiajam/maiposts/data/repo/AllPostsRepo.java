@@ -1,13 +1,10 @@
 package com.maiajam.maiposts.data.repo;
+import android.util.Log;
 
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
-
 import com.maiajam.maiposts.data.model.AllPost;
 import com.maiajam.maiposts.data.retrofit.ApiClient;
 import com.maiajam.maiposts.data.retrofit.ApiService;
-
-import java.util.ArrayList;
 import java.util.List;
 
 import io.reactivex.Observable;
@@ -52,11 +49,14 @@ public class AllPostsRepo {
                 .subscribe(new Observer<List<AllPost>>() {
                     @Override
                     public void onSubscribe(Disposable d) {
+
+
                     }
 
                     @Override
                     public void onNext(List<AllPost> allPosts) {
                         allPostsLiveData.setValue(allPosts);
+                        Log.d("on next","onNext");
                     }
 
                     @Override
@@ -66,7 +66,7 @@ public class AllPostsRepo {
 
                     @Override
                     public void onComplete() {
-
+                    Log.d("on Complete","onComplete");
                     }
                 });
 

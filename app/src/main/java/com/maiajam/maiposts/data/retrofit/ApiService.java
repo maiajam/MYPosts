@@ -9,5 +9,4 @@ public interface ApiService {
 
     @GET("Posts")
     Observable<List<AllPost>> getAllPosts();
-
 }
