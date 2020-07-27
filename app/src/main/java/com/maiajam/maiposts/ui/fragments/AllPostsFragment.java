@@ -54,6 +54,8 @@ public class AllPostsFragment extends Fragment {
 
     private void initialAllPost() {
         allPostsViewModel = new ViewModelProvider(this).get(AllPostsViewModel.class);
+        if(!allPostsViewModel.isNetworkAvailable(getActivity()))
+            return;
         if(allPostsViewModel.getThrowable()== null){
             allPostsViewModel.getAllPosts().observe(getActivity(), new androidx.lifecycle.Observer<List<AllPost>>() {
                 @Override
